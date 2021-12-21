@@ -8,30 +8,7 @@
 	<script type="text/javascript" src="https://x3dom.org/download/1.8.2/x3dom-full.debug.js"></script>
 	<link rel='stylesheet' type='text/css' href='https://www.x3dom.org/release/x3dom.css'>
 	</link>
-  <script>
-document.querySelector('X3D').setAttribute('ondownloadsfinished','loaded()');
-function loaded () {
-  console.log('in listener');
-  var depthmode1 = document.createElement('depthmode');
-  depthmode1.setAttribute('enabledepthtest','false');
-  document.
-    querySelector('Inline[DEF=cube0]').
-    querySelector('appearance').appendChild(depthmode1);
-  var depthmode2 = depthmode1.cloneNode();
-  document.
-    querySelector('Inline[DEF=cube1]').
-    querySelector('appearance').appendChild(depthmode2);
-  var blendmode1 = document.createElement('blendmode');
-  blendmode1.setAttribute('srcfactor', 'src_alpha_saturate');
-  document.
-    querySelector('Inline[DEF=cube0]').
-    querySelector('appearance').appendChild(blendmode1);
-  var blendmode2 = blendmode1.cloneNode();
-  document.
-    querySelector('Inline[DEF=cube1]').
-    querySelector('appearance').appendChild(blendmode2);
-};
-  </script>
+
 </head>
 
 <body id='body'>
@@ -60,5 +37,30 @@ function loaded () {
 		</Scene>
 	</X3D>
 </body>
+
+  <script>
+document.querySelector('X3D').setAttribute('ondownloadsfinished','loaded()');
+function loaded () {
+  console.log('in listener');
+  var depthmode1 = document.createElement('depthmode');
+  depthmode1.setAttribute('enabledepthtest','false');
+  document.
+    querySelector('Inline[DEF=cube0]').
+    querySelector('appearance').appendChild(depthmode1);
+  var depthmode2 = depthmode1.cloneNode();
+  document.
+    querySelector('Inline[DEF=cube1]').
+    querySelector('appearance').appendChild(depthmode2);
+  var blendmode1 = document.createElement('blendmode');
+  blendmode1.setAttribute('srcfactor', 'src_alpha_saturate');
+  document.
+    querySelector('Inline[DEF=cube0]').
+    querySelector('appearance').appendChild(blendmode1);
+  var blendmode2 = blendmode1.cloneNode();
+  document.
+    querySelector('Inline[DEF=cube1]').
+    querySelector('appearance').appendChild(blendmode2);
+};
+  </script>
 
 </html>
