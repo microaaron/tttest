@@ -5,3 +5,4 @@ export function fun() {
   console.log(`Hello, module`);
   window.addEventListener( "load", onload, false );
 }
+console.log(`Hello, module`);
